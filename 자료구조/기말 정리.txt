@@ -1,0 +1,17 @@
+Lec07
+Tail Recursion
+
+Lec08
+Graph
+- 순회 요소 없음
+Tree
+- 자식 노드 개수 2개 이하
+Binary Tree
+- 정렬
+Binary Search Tree
+
+Lec09
+Array로 나타냈을 때의 장점 - 랜덤 액세스가 가능하다
+
+방향 그래프가 더 범용적인 알고리즘이다
+무향 그래프는 방향 그래프로 표현할 수 있지만 역은 불가능

@@ -1,0 +1,52 @@
+enum - 열거 나열
+ex)
+enum COLOR {RED = 0x010, BLUE = 0x001, GREEN = 0x100, NUM_OF_COLORS};
+아무것도 선언하지 않았다면 1, 2, 3순임 근데 또 int는 아니다 타입이 COLOR임
+
+반복문 돌릴 때 쓸 수 있다는데 몰라도 될 듯
+
+enum PROPERTY {MOVABLE = 0x010, LIVE = 0x100, EDIBLE = 0x001, NUM_OF_COLORS};
+
+PROPERTY p;
+p = MOVABLE | EDIBLE; // 0x011
+
+010
+001
+----
+011
+
+if(m_property & MOVABLE) {
+	... ;
+}
+
+union example {
+	int integer;
+	char character[4];
+};
+
+// struct였다면 데이터 8짜리
+
+example e;
+e.integer = 0x12341234;
+cout << character[3]; // 0x65
+
+//근데 union형이면 모든 변수가 저장 공간을 공유한다
+
+int의 사이즈는 어떻게 결정될까?
+
+cpu가 가장 많이 수행하는 연산
+메모리 주소를 해석하는 연산
+여기서 메모리 최적화를 시켜야 cpu 성능을 최적화시킬 수 있다
+한 번의 클럭 (전압을 주는 것)을 통해 보내는 정보 = bus
+
+변수 = 식별자, 값, 주소를 합친 것
+
+참조변수는 혼자 존재할 수 없다 선언과 동시에 초기화되어야 한다
+하지만 함수에 붙었을 때는 초기화를 따로 하지 않는데, 
+
+p.47 *
+
+a++ 그 줄 하고 나서 +
+++a 그 줄 하기 전에 +
+
+배열 포인터?

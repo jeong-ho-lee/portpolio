@@ -1,0 +1,5 @@
+﻿  StackDr.cpp
+c1xx : fatal  error C1083: 소스 파일을 열 수 없습니다. '..\..\lab4-1-1\lab4_2\StackDr.cpp': No such file or directory
+  StackType.cpp
+c1xx : fatal  error C1083: 소스 파일을 열 수 없습니다. '..\..\lab4-1-1\lab4_2\StackType.cpp': No such file or directory
+  코드를 생성하고 있습니다...
