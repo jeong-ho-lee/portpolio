@@ -1,0 +1,29 @@
+1. DnCNN (Denoising Convolution Neural Network)
+Conv + ReLU 층과 Conv 층 사이에 Block을 길게 쌓아 학습.
+Block의 구조는 Conv + BN + ReLU로 구성.
+Block을 기존 15층에서 30 ~ 60층까지 키워가며 학습. Epoch은 10 ~ 30.
+파라미터 개수는 800만개 가까이까지 커졌으나 단순한 Block의 구조 때문에 극적인 변화가 없었음.
+그래서 BN 대신 LN, ReLU 대신 GELU를 사용하여 Block 구조의 변화 시도.
+LN과 GELU를 사용했을 때, 모델의 수치적 용량이 기하급수적으로 커져 구조적인 용량이 제한됨.
+성능이 향상되기는 하였으나 극적인 변화는 없었음.
+
+
+2. UNet
+CNN 외의 다른 모델 시도.
+UNet은 오토인코더와 같은 인코더 - 디코더 기반 모델. 원래 이미지 세그멘테이션 모델.
+인코딩 단계에서는 이미지의 특징을 포착, 디코딩 단계에서는 고차원의 이미지를 복원.
+인코딩 - 디코딩 과정에서 중요한 특징만 가져가
+므로 이미지 열화 제거에 효과적일거라 예측.
+인코더와 디코더는 Conv + ReLU로 구성.
+인코딩 층과 디코딩 층은 각각 4층으로 구성.
+300만 개의 많지 않은 파라미터 개수로도 DnCNN
+을 압도하는 성능을 냄. 
+
+3. SRResNet (Super Resolution Residual Net)
+SR은 Super Resolution으로 이미지의 초해상화, 예를 들어 128 * 128의 이미지를 512 * 512로 확장하는 것을 의미함.
+이미지를 초해상화한 뒤, Conv 층을 통해서 특징을 유지한 채 크기를 복구하면 화질 향상을 기대할 수 있다고 생각.
+Conv + ReLU 층과 Conv 층 사이에 Residual Block을 길게 쌓고 마지막 Conv 층 전에 Upsampling Layer를 통해 초해상화를 진행한 뒤, 마지막 Conv 층으로 복구.
+Residual Block은 Conv + BN + ReLU로 구성되어 있으며 전방 계산 단계에서 입력 벡터를 다시 더해주어 Residual Connection을 수행.
+Residual Block의 수가 적어도 좋은 성능을 보였지
+만, Residual Block의 수가 커진다고 극적인 변화
+는 없었음.

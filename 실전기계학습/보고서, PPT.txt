@@ -1,0 +1,9 @@
+기말프 보고서, PPT에 들어갈 내용
+1. 기말 프로젝트 문제에 대한 분석
+2. 조교가 설명해준 내용들 ex. DnCNN SRCNN Transformer GAN 등등
+3. 어떤 모델들을 썼는지 ex. DnCNN SRCNN UNet SRResNet Pix2Pix CycleGAN Transformer 등등
+4. 이 모델들을 써서 결과는 어땠고, 잘 안됐다면 뭐가 패착이었고 잘 됐다면 왜 잘됐는지
+5. 최종 사용 모델 발표
+6. 최종 모델의 구조와 연산에 대한 설명
+7. 최종 모델 Fine Tuning 과정
+8. 최종 결과

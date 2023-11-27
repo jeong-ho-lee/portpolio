@@ -1,0 +1,127 @@
+1.
+지능 스펙트럼
+
+강한 인공지능 여러가지 기능
+약한 인공지능 한 가지 기능
+
+인공지능 접근 방법
+과학적 - 원리를 모방
+공학적 - 굳이
+
+3.
+
+기계 학습의 과정
+
+데이터 수집 - 특징 추출 - 모델링 - 예측
+
+혼동 행렬
+	그라운드 트루스
+예측값	긍정	부정
+긍정	TP	FP
+부정	FN	TN
+
+그라운드 트루스 = 예측값 T
+그라운드 트루스 != 예측값 F
+
+예측값 긍정 P
+예측값 부정 N
+
+정확률 = 맞힌 샘플 수 / 전체 샘플 수 = 대각선 샘플 수 / 전체 샘플 수
+특이도 = TN / TN + FP (그라우드 트루스 부정), 민감도 = TP / TP + FN (그라운드 트루스 긍정)
+정밀도 = TP / TP + FP (예측값 긍정), 재현율 = TP / TP + FN (예측값 부정)
+
+fit - 훈련
+predict - 예측값
+
+K겹 교차 검증
+훈련 집합을 K개의 부분 집합으로 나누어 부분 집합 중 한 개를 테스트 집합으로 사용. 이를 K번 반복
+
+SVM에서 C는 모델 용량
+C가 크다 - 훈련 집합에 대한 정확률은 높지만 일반화 능력이 나쁘다. 과잉 적합이 일어난다
+C가 작다 - 훈련 집합에 대한 정확률은 낮지만 일반화 능력이 좋다.
+
+4.
+
+손실 함수의 조건
+1. 0보다 크다
+2. 틀리는 샘플이 많을수록 커진다
+3. 다 맞추면 0이다
+
+신경망 노드의 수가 많아지면 모델의 용량이 커지고 과잉 적합의 가능성이 높아진다
+
+Softmax
+출력값을 확률로 만들어줌 exp(zj) / exp(z1) + ... + exp(zk)
+
+원 핫 코드 형태로 작성된 출력 벡터 Y와 예측 벡터 O에 대하여 손실 함수는
+J(U1, U2) = ((Y1 - O1) ^ 2 + ... + (YC - OC) ^ 2) ^ 1 / 2
+편의상 제곱해서 제곱근 제거, 미니 배치 단위로 처리
+J(U1, U2) = 1 / C ((Y1 - O1) ^ 2 + ... + (YC - OC) ^ 2)
+
+L4.
+grad = gradient(x_val, y_val)
+w = w - lr * grad
+
+Automatic한 방법
+y_pred = forward(x_val) 전방 계산
+l = loss(y_pred, y_val) 오류 계산
+l.backward() 오류 역전파
+w.grad = w.grad - lr * w.grad.item() 가중치 업데이트
+w.grad.data.zero_() 누적 방식으로 계산하기 때문에 가중치 업데이트 후 그레디언트 초기화가 필요하다
+
+L5.
+Linear Regression Model
+self.linear = torch.nn.Linear(1, 1) 1개의 입력, 1개의 출력 Linear Model
+y_pred = self.linear(x) 전방 계산
+criterion = torch.nn.MSELoss() 평균 제곱 오차
+optimizer = torch.optim.SGD(model.parameters(), lr = 0.1) 학습 모델
+y_pred = model(x_data) 전방 계산
+loss = criterion(y_pred, y_data) 오차 계산
+optimizer.zero_grad() 가중치 초기화
+loss.backward() 오류 역전파
+optimizer.step() 가중치 업데이트
+
+L6.
+Logistic Regression Model
+self.sigmoid = torch.nn.Sigmoid()
+y_pred = self.sigmoid(self.linear(x)) 전방 계산, Linear Model에 Sigmoid
+criterion = torch.nn.BCELoss() 이진 교차 엔트로피
+
+L7.
+MLP (Softmax 쓰는게 좋음)
+self.linear1 = torch.nn.Linear(5, 3) 1번 은닉층, 5개의 입력, 3개의 출력
+self.linear2 = torch.nn.Linear(3, 1) 2번 은닉층, 3개의 입력, 1개의 출력
+x = self.sigmoid(self.linear1(x)) 1번 은닉층 전방 계산, 활성함수 Sigmoid
+y_pred = self.sigmoid(self.linear2(x)) 2번 은닉층 전방 계산, 활성함수 Sigmoid
+
+L8.
+DataLoader
+dataset = DiabetesDataset() 데이터 셋을 불러옴
+train_loader = torch.utils.data.DataLoader(dataset = dataset, batch_size = 32, shuffle = True, num_workers = 2) 데이터 로더 불러옴
+for i, data in enumerate(train_loader, 0)
+	inputs, labels = data
+	inputs, labels = tensor(inputs), tensor(labels)
+
+L9.
+x = x.view(-1, 784) 원래 (n, 1, 28, 28)인 데이터를 (n, 784)로 변환
+
+L(y^, y) = -logy^(k), k = 정답 클래스
+
+L10.
+Max Pooling - 유사도가 높은 중요한 특징을 선택하기 때문에 성능이 좋음
+대략적으로 Convolution Layer - Pooling (Subsampling) Layer - Fully Connected Layer로 구성되어 있음
+입력 이미지의 층과 Filter의 개수는 항상 동일하다
+
+self.conv1 = nn.Conv2d(1, 10, kernal_size = 5) 입력 채널 1층, 출력 채널 10층 = Filter 10개, Kernal Size 5 * 5
+self.mp = nn.maxPool2d(2) Kernal Size 2 * 2 Max Pooling
+x = x_view(in_size, -1) Tensor를 Vector로 변환 - Fully Connected Layer 통과 가능
+return F.log_softmax(x) - 최종적으로 Softmax를 통과시켜 Class별 확률로 반환
+
+L11.
+1 * 1 Convolution
+1. 특징 맵의 채널 수 조정이 가능하다
+2. 다채널 입력에 대해 채널 수 조정을 통해 특징 정보는 유지하면서 연산량 감소를 이끌어낼 수 있다
+
+Inception Module
+self.branch1x1 = nn.Conv2d(in_channels, 16, kernal_size = 1) 출력 채널 16층 = Filter 16개, Kernal Size 1 * 1
+branch_pool = F.avg_pool2d(x, kernal_size = 3, stride = 1, padding = 1) Kernal Size 3 * 3, 한 칸씩, 1을 덧대서 Avg Pooling
+outputs = [branch1x1, branch5x5, branch3x3dbl, branch_pool] 하나의 Output으로 묶음
