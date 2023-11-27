@@ -1,0 +1,99 @@
+11.
+
+대역폭이 작으면 뾰족, 크면 매끄러움
+
+12.
+
+라그랑주 승수법
+동등 제약 조건
+Minimize f(x)
+Subject To g(x) = 0
+
+∇xL(x, λ) = 0
+∇λL(x, λ) = 0
+
+Optimal Point
+
+부등 제약 조건
+Minimize f(x)
+Subject To g(x) <= 0
+
+If Active
+동등 제약 조건이랑 같음
+
+If Inactive
+Unconstrained랑 같음
+
+=> KKT Condition을 이용
+
+KKT Condition
+∇xL(x, λ) = 0
+g(x) <= 0
+λ >= 0
+λg(x) = 0
+
+Lagragian Duality
+Minimize f(x)
+Subject To gi(x) <= 0 i = 1, ... , m
+
+Get L(x, λ)
+Get x, Make ∇xL(x, λ) = 0
+Get D(λ)
+
+Maximize D(λ) = min L(x, λ)
+Subject To λ >= 0
+
+13.
+
+SVM
+Hard Margin
+Maximize
+J(w) = 2 / ||w||2
+
+Subject To
+wtxi + b >= 1, yi = 1
+wtxi + b <= -1, yi = -1
+
+To Constrained Minimization
+
+Minimize
+J(w) = 1 / 2 ||w||2 (역수 취함)
+
+Subject To
+yi(wTxi + b) - 1 >= 0, i = 1, ... , n
+
+L(w, b, α) = ||w||2 / 2 - Σαi(yi(wTxi + b) - 1)
+
+∂L(w, b, α) / ∂w = 0
+w = Σaiyixi
+
+∂L(w, b, α) / ∂b = 0
+Σaiyi = 0
+b = yi - wTxi
+
+Dual 
+Maximize
+~L(α) = Σαi - 1 / 2 ΣΣαiαjyiyjxTixj
+
+Subject To
+Σaiyi = 0
+ai >= 0
+
+Nonlinear SVM
+
+Perceptron
+sign(wTx)
+
+RBF
+Φ(x) = exp(-||x - c||2 / 2σ^2)
+
+SMO
+q = 2
+
+15분까지 봤음
+
+14.
+
+Clustering
+
+Naive Bayes 특징 간 독립

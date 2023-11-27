@@ -1,0 +1,67 @@
+1.
+
+지도 학습 (Supervised Learning)
+회귀(Regression) - 출력값이 실수
+분류(Classification) - 출력값이 클래스
+
+비지도 학습(Unsupervised Learning)
+군집화(Clustering) - 대상을 분류, 클래스가 주어지지 않음
+밀도 추정(Density Estimation) - 데이터로부터 변수가 가질 수 있는 모든 값의 확률을 추정
+매니폴드 가정 - 차원의 저주 문제 (차원이 높아질수록 데이터가 희소해진다)를 해결하기 위해 고차원의 데이터를 저차원에 옮겼을 때에도 특징을 잘 반영할 수 있다는 가정
+차원 축소(Dimensionality Reduction) - 여러 개의 특징 중 중요한 특징을 추출
+
+준지도 학습 (Semi-Supervised Learning)
+출력값이 입력값에 비해 매우 적게 주어짐
+
+강화 학습 (Reinforcement Learning)
+에이전트가 환경에 따라 행동하고 행동에 대한 보상을 줌 에이전트는 보상에 의해 학습하고 그에 대한 정책을 조율
+
+3.
+∇x bTx = b
+∇2x bTx = 0
+
+∇x xTAx = 2Ax (A가 대칭행렬), (A + AT)x
+∇2x xTAx = 2A (A가 대칭행렬), (A + AT)
+
+Gradient Descent
+Online Mode(SGD) - 데이터 1개 볼 때마다 업데이트
+Batch Mode - 모든 데이터에 대해 평균을 구해 업데이트
+Mini-Batch Mode - 임의의 t개의 데이터를 추출해 이 데이터들에 대해 평균을 구해 업데이트, 이것을 여러번 반복
+
+데이터 샘플의 순서를 섞어서 하면 Shuffling, 임의의 데이터를 추출해서 하면 Sampling
+
+4.
+Feature Normalization
+Feature Scailing - 특징들이 비슷한 범위를 갖도록 범위 축소
+Mean Normalization - 모든 데이터에서 평균을 빼 평균을 0을 만듦
+
+Linear Regression
+Model = θTXi
+Cost Function = 1 / 2m Σ 1 ~ m (θXi - yi) ^ 2
+Gradient = ∂ / ∂θj = 1 / m Σ 1 ~ m (θXi - yi)xj
+
+Model = θTX
+Cost Function = 1 / 2m ||Xθ - y||22 = 1 / 2m(Xθ - y)T(Xθ - y)
+Gradient = 1 / m XT(Xθ - y)
+
+5.
+Logistic Regression
+Model = σ(θTXi)
+Cost Function = -1 / m Σ 1 ~ m H(yi, h(Xi)) + H(1 - yi, 1 - h(Xi))
+Gradient = ∂ / ∂θj = 1 / m Σ 1 ~ m (σ(θTXi) - yi)Xij
+
+Model = σ(θTX)
+Cost Function = -1 / m(H(YT, H) + H((1 - Y)T, 1 - H))
+Gradient = 1 / m XT(σ(Xθ) - Y)
+
+6.
+Perceptron
+오분류 집합 Y
+Cost Function = Σ xk ∈ Y -yk(wTxk)
+Gradient = ∂ / ∂wi = Σ xk ∈ Y -ykxki
+
+7.
+MLP
+Cost Function - MSE
+Gradient = ∂ / ∂u2kj = δkzj = (ok - yk)τ'(osumk)zj
+∂/∂u1kj = ηjxi = Σ 1 ~ c δgu2gj τ'(zsumj)xi = Σ 1 ~ c (og - yg)τ'(osumg)u2gj τ'(zsumj)xi
