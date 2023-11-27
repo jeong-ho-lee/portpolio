@@ -1,0 +1,13 @@
+﻿  KhuGleBase.cpp
+  KhuGleComponent.cpp
+  KhuGleLayer.cpp
+  KhuGleScene.cpp
+  KhuGleSprite.cpp
+  KhuGleWin.cpp
+C:\Users\이정호\Downloads\진화와인간본성\인공지능과게임프로그래밍\2019102212_기말_프로젝트\2019102212\02. KhuGle(Game Layout)\KhuGle\KhuGleWin.cpp(347,51): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\이정호\Downloads\진화와인간본성\인공지능과게임프로그래밍\2019102212_기말_프로젝트\2019102212\02. KhuGle(Game Layout)\KhuGle\KhuGleWin.cpp(365,32): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\이정호\Downloads\진화와인간본성\인공지능과게임프로그래밍\2019102212_기말_프로젝트\2019102212\02. KhuGle(Game Layout)\KhuGle\KhuGleWin.cpp(409,32): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\이정호\Downloads\진화와인간본성\인공지능과게임프로그래밍\2019102212_기말_프로젝트\2019102212\02. KhuGle(Game Layout)\KhuGle\KhuGleWin.cpp(521,12): warning C4244: 'return': 'WPARAM'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Main.cpp
+  코드를 생성하고 있습니다...
+  KhuGle.vcxproj -> C:\Users\이정호\Downloads\진화와인간본성\인공지능과게임프로그래밍\2019102212_기말_프로젝트\2019102212\02. KhuGle(Game Layout)\x64\Debug\KhuGle.exe

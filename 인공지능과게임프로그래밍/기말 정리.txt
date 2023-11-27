@@ -1,0 +1,21 @@
+충돌 공과 공 수학적으로 설명
+란삭 말로 설명
+roc curve 구하기
+지표 특성
+어떤 어플에서 뭐가 중요한지
+f1 fbeta
+perceptron dnn cnn gd
+델타 규칙 오류 역전파
+활성함수 relu든지 다른걸로 나왔을 때 weight 갱신하는 법
+
+1. 충돌 (벡터 처리)
+
+2. 프로젝션/뷰 행렬 (수학적 구성)
+
+3. 영상 압축 (DCT와 양자화 구성)
+
+4. 최소제곱 (의사 역함수 구성)과 RANSAC
+
+5. Precision, recall, FPR, FNR, TNR, Accuracy, ROC 등의 성능 평가 (ROC 계산, 각 평가 지표의 특징)
+
+6. Perceptron, DNN, MLP (기울기 하강, 활성 함수, 델타 규칙 활용(오류 역전파))

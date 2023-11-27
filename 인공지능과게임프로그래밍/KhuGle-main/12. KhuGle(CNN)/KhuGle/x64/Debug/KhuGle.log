@@ -1,0 +1,20 @@
+﻿  KhuDaNet.cpp
+C:\인공지능과게임프로그래밍\KhuGle-main\12. KhuGle(CNN)\KhuGle\KhuDaNet.cpp(213,27): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  KhuDaNetLayer.cpp
+  KhuGleBase.cpp
+  KhuGleComponent.cpp
+  KhuGleLayer.cpp
+  KhuGleScene.cpp
+  KhuGleSignal.cpp
+  KhuGleSprite.cpp
+  KhuGleWin.cpp
+C:\인공지능과게임프로그래밍\KhuGle-main\12. KhuGle(CNN)\KhuGle\KhuGleWin.cpp(352,80): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\인공지능과게임프로그래밍\KhuGle-main\12. KhuGle(CNN)\KhuGle\KhuGleWin.cpp(370,66): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\인공지능과게임프로그래밍\KhuGle-main\12. KhuGle(CNN)\KhuGle\KhuGleWin.cpp(414,52): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\인공지능과게임프로그래밍\KhuGle-main\12. KhuGle(CNN)\KhuGle\KhuGleWin.cpp(526,12): warning C4244: 'return': 'WPARAM'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Main.cpp
+C:\인공지능과게임프로그래밍\KhuGle-main\12. KhuGle(CNN)\KhuGle\Main.cpp(375,28): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  SoundPlayWin.cpp
+C:\인공지능과게임프로그래밍\KhuGle-main\12. KhuGle(CNN)\KhuGle\SoundPlayWin.cpp(21,58): warning C4312: '형식 캐스트': 'DWORD'에서 더 큰 'LPWAVEHDR'(으)로의 변환입니다.
+  코드를 생성하고 있습니다...
+  KhuGle.vcxproj -> C:\인공지능과게임프로그래밍\KhuGle-main\12. KhuGle(CNN)\Run\KhuGle64D.exe
