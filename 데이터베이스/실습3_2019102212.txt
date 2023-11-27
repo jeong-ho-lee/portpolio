@@ -1,0 +1,54 @@
+Creating and Managing Table
+
+1.
+CREATE TABLE dept(ID Number(7),NAME VARCHAR2(25));
+describe dept;
+
+2.
+insert into dept(id , name)
+select department_id,department_name from departments;
+
+3.
+Create table emp(ID Number(7),LAST_NAME VARCHAR2(25),FIRST_NAME VARCHAR2(25),DEPT_ID NUMBER(7));
+
+4.
+ALTER TABLE emp
+modify (last_name varchar2(50));
+
+5.
+drop table emp;
+
+6.
+create table EMPLOYEES2(ID number(6),FIRST_NAME varchar(20),LAST_NAME varchar(25),SALARY number(8,2),DEPT_ID number(4));
+
+7.
+RENAME employees2 to emp;
+
+8.
+ALTER TABLE emp
+drop (first_name);
+
+Constraints
+
+1.
+alter table emp
+add constraint "my_emp_id_pk" primary key(id);
+
+2.
+alter table dept
+Add (constraint "my_dept_id_pk" primary key(id));
+
+3.
+alter table emp
+add (constraint "my_emp_dept_id_fk" foreign key(dept_id) references dept(id));
+
+4.
+select constraint_type,constraint_name, search_condition
+from user_constraints
+where table_name= 'emp' or table_name= 'dept';
+
+5.
+alter table emp
+add (COMMISSION number(2,2));
+alter table emp
+add (constraint "commission_ck" check (commission>0));
